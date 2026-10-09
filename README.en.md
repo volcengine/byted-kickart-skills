@@ -28,25 +28,15 @@ All included skills are currently version `2.3.7`.
 
 ## Installation
 
-Install the skills into an agent's skill directory with the Fornax CLI:
+Copy the skills you need into your agent's skill directory:
 
 ```bash
-fornax-cli skill install \
-  creative_platform.kickart.marketing_material_generator_for_doubao_partner \
-  creative_platform.kickart.viral_replicator_for_doubao_partner \
-  creative_platform.kickart.video_elements_replace_for_doubao_partner
+cp -R byted-kickart-marketing-material-generator <agent-skills-directory>/
+cp -R byted-kickart-viral-replicator <agent-skills-directory>/
+cp -R byted-kickart-video-elements-replace <agent-skills-directory>/
 ```
 
-To install the checked-out repository contents into a local agent directory:
-
-```bash
-fornax-cli skill install \
-  --skill-query-json @./.fornax-cli/skill-sync.json \
-  --dir <agent-skills-directory>
-```
-
-The `.fornax-cli/` directory is intentionally ignored because it contains local sync
-configuration and generated CLI output.
+You can also follow the official installation or linking method for your Agent runtime.
 
 ## Requirements
 
@@ -54,7 +44,6 @@ configuration and generated CLI output.
 - Node.js and npm.
 - Access to `@volcengine/kickart-open-mcp@1.1.x`.
 - A valid KickArt OAuth session and sufficient account permissions or credits.
-- For Fornax sync, install `fornax-cli` and obtain access to the target workspace.
 
 Each Skill performs its own CLI and authentication checks. Never commit OAuth tokens,
 AK/SK credentials, or other secrets.

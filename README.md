@@ -26,24 +26,15 @@
 
 ## 安装
 
-使用 Fornax CLI 将 Skill 安装到 Agent 的 Skill 目录：
+将需要使用的 Skill 目录安装到 Agent 的 Skill 目录：
 
 ```bash
-fornax-cli skill install \
-  creative_platform.kickart.marketing_material_generator_for_doubao_partner \
-  creative_platform.kickart.viral_replicator_for_doubao_partner \
-  creative_platform.kickart.video_elements_replace_for_doubao_partner
+cp -R byted-kickart-marketing-material-generator <agent-skills-directory>/
+cp -R byted-kickart-viral-replicator <agent-skills-directory>/
+cp -R byted-kickart-video-elements-replace <agent-skills-directory>/
 ```
 
-将当前仓库中的 Skill 安装到指定的本地 Agent 目录：
-
-```bash
-fornax-cli skill install \
-  --skill-query-json @./.fornax-cli/skill-sync.json \
-  --dir <agent-skills-directory>
-```
-
-`.fornax-cli/` 用于保存本地同步配置和 CLI 生成文件，已加入 Git 忽略规则。
+也可以根据所使用的 Agent，按照其官方方式安装或链接对应的 Skill 目录。
 
 ## 环境要求
 
@@ -51,7 +42,6 @@ fornax-cli skill install \
 - Node.js 和 npm。
 - 可访问 `@volcengine/kickart-open-mcp@1.1.x`。
 - 有效的 KickArt OAuth 登录态，以及必要的权限或创点。
-- 从 Fornax 同步时，需要安装 `fornax-cli` 并拥有目标空间访问权限。
 
 每个 Skill 都会执行 CLI 和登录态检查，请勿提交 OAuth Token、AK/SK 或其他敏感信息。
 
